@@ -1,0 +1,194 @@
+// 
+// Buttons
+// 
+
+// Custom extra large button size
+.btn-mediano {
+    background-color: $myblueButtons;
+	outline: none;
+	color: #fff;
+	font-size: 14px;
+	height: auto;
+	font-weight: normal;
+	padding: 14px 0;
+	text-transform: uppercase;
+    border-radius: 10px;
+	margin-bottom: 20px;
+	width: 90%;
+    .btn-mediano:hover,
+    .btn-mediano:focus{
+        color: #fff;
+        background-color: $myblueButtons;
+        border-color: $myblueButtons;
+    }
+}
+
+.btn-grande {
+    background-color: $myOrange2P;
+	outline: none;
+	color: #fff;
+	font-size: 14px;
+	height: auto;
+	font-weight: normal;
+	padding: 14px 0;
+	text-transform: uppercase;
+    .btn-register:hover,
+    .btn-register:focus {
+        color: #fff;
+        background-color: $myblueButtons; 
+        border-color: $myblueButtons;
+    }
+}
+
+.btn-pequeño{
+	margin-left: 10px;
+    width: 90%;
+    padding: 15px;
+    background-color: $myorangeP;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.36);
+    transition: .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    border: 3px solid white;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+	.btn-pequeño:hover{
+		cursor: pointer;
+	}
+	.btn-pequeño > label:hover{
+		cursor: pointer;
+	}
+}
+
+.btn-continuarCompra{
+	margin: 10px;
+    width: 45%;
+    padding: 15px;
+    background-color: $myOrange3P;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.36);
+    transition: .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+	.btn-continuarCompra:hover{
+		cursor: pointer;
+	}
+	.btn-continuarCompra > label:hover{
+		cursor: pointer;
+	}
+}
+
+.btn-guardar{
+    background: $myOrange2P;
+    color: white;
+    height: 50px;
+    width: 100px;
+    box-shadow: none;
+    border-radius: 20px;
+    border-color: $myOrange2P;
+    
+    .btn-guardar:hover{
+        background: $myOrange2P;
+        border: none;
+    }
+
+    .btn-guardar:active{
+        background: $secondary;
+        box-shadow: none;
+    }
+}
+
+.btn-confirmarPago{
+    background: $secondary;
+    height: 52px;
+    font-size: 15px;
+    border-radius: 8px;
+    color: #ffffff;
+    padding: 15px;
+    text-align: center;
+
+    .btn-confirmarPago:hover{
+        background: $secondary;
+        border: none;
+    }
+}
+
+.botonsito.b1{
+    height: 52px;
+    font-size: 15px;
+    border-radius: 8px;
+    color: #000000; 
+    background: $secondary;
+}
+
+.botonsito.b2{
+    height: 52px;
+    font-size: 15px;
+    border-radius: 8px;
+    color: #000000; 
+    background: $myOrange3P;
+}
+
+.btn-juego{
+    background-color: $myblueP;
+	outline: none;
+	color: #fff;
+	font-size: 14px;
+	height: auto;
+	font-weight: normal;
+	padding: 14px 0;
+	text-transform: uppercase;
+    border-radius: 10px;
+	margin-bottom: 20px;
+	width: 100%;
+    .btn-juego:hover,
+    .btn-juego:focus{
+        color: $myblueButtons;
+        border-color: $myblueButtons;
+    }
+}
+
+.btn-crudAdmin{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 60px;
+    width: 90%;
+    padding: 15px;
+    background-color: $myorangeP;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.36);
+    transition: .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    border: 3px solid white;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+	.btn-pequeño:hover{
+		cursor: pointer;
+	}
+	.btn-pequeño > label:hover{
+		cursor: pointer;
+	}
+}
+
+.btn-anadir{
+    margin-top: 3px;
+    margin-bottom: 5px;
+    margin-left: 60px;
+    width: 90%;
+    padding: 15px;
+    background-color: $myorangeP;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.36);
+    transition: .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    border: 3px solid $myorangeP;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+	.btn-pequeño:hover{
+		cursor: pointer;
+	}
+	.btn-pequeño > label:hover{
+		cursor: pointer;
+	}
+}

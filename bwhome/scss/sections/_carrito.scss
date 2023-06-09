@@ -1,0 +1,171 @@
+.bodycarr{
+    font-family: $headings-font-family;
+}
+
+.carrito{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btnC{
+    color: #2B2B2B;
+}
+
+// cards
+.imagenCarr{
+    width: 15rem;
+}
+
+.labelcarr{
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+.resumenpedido{
+    margin-top: 30px;
+    font-weight: bold;
+    margin-left: 50px;
+}
+
+.subtotal{
+    margin-top: 15px;
+    font-size: 16px;
+    margin-left: 50px;
+}
+
+.numsubtotal{
+    margin-top: 15px;
+    font-size: 18px;
+    margin-left: 275px;
+}
+
+.methodsend{
+    margin-top: 15px;
+    font-weight: bold;
+    margin-left: 50px;
+}
+
+.col.entregaestandar{
+    margin-top: 10px;
+    font-size: 16px;
+    margin-left: 50px;
+}
+
+.col.entregagratis{
+    margin-top: 8px;
+    font-size: 16px;
+    margin-left: 50px;
+}
+
+.numenvioestandar{
+    font-size: 18px;
+    margin-left: 190px;
+}
+
+.numenviogratis{
+    font-size: 18px;
+    margin-left: 212px;
+}
+
+.col-md-6.producto{
+    text-align: center;
+}
+
+input[type='radio']{
+    appearance: none;
+    border-radius: 50%;
+    border: 2px solid $myOrange2P;
+    width: 15px;
+    height: 15px;
+}
+
+tr:hover > td input[type='radio']::after{
+    display: inline-block;
+    content: "";
+    position: relative;
+    height: 7px;
+    width: 7px;
+    background: transparent;
+    border:1px solid $myOrange2P;
+    border-radius: 50%;
+}
+
+input[type="radio"]:checked::after{
+    display: inline-block;
+    content: "";
+    position: relative;
+    height: 7px;
+    width: 7px;
+    background: $myOrange2P;
+    border:1px solid $myOrange2P;
+    border-radius: 50%;
+    top: -9px;
+    left: 2px;
+}
+
+.col.importetotal{
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 50px;
+    color: $myOrange2P;
+}
+
+.numtotal{
+    font-size: 18px;
+    margin-left: 100px;
+
+}
+
+.labelcarr1{
+    margin-top: 20px;
+    font-size: 14px;
+    margin-left: 10px;
+    font-family: $font-family-acme;
+}
+
+.col.cantidad{
+    margin-bottom: 20px;
+}
+
+.fa-solid.fa-trash-can{
+    color: $myOrange2P;
+    font-size: 20px;
+}
+
+.card-resumen{
+    background-color: $myOrange4P;
+    border-radius: 10px;
+}
+
+
+.fa-solid.fa-house-chimney.continuarcomprando{
+    color: black;
+}
+
+.ahref{
+    text-decoration: none;
+    color: white;
+}
+
+.row.pagar{
+    text-align: center;
+    margin: 20px;
+}
+
+.row.continuar{
+    margin: 20px;
+}
+
+@media screen and (max-width: 600px){
+    .row.continuar{
+        justify-content: center;
+    }
+
+    .btn-continuarCompra{
+        width: 90%;
+    }
+}
+
+
+

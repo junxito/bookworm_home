@@ -1,0 +1,66 @@
+// 
+// Header
+// 
+
+
+
+.navbarC{
+    display: flex;
+    justify-content: center;
+
+    ul{
+        width: 100%;
+    }
+    
+    li{
+        flex: 1;
+        float: right;
+    }
+    
+    li a{
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        font-weight: bold;
+    }
+    
+    li a:hover{
+        background-color: $myOrange2P;
+    }
+}
+
+.navPrincipal{
+
+    ul{
+        display: flex;
+        flex-direction: row;
+    }
+    img{
+        width: 120px;
+    }
+}
+
+.navbar-item{
+    flex: 1;
+    float: right;
+}
+
+.nav-link{
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    font-weight: bold;
+    font-family: $headings-font-family;
+}
+
+.nav-link:hover{
+    background-color: $myOrange2P;
+}
+
+/*
+
+
+
+*/

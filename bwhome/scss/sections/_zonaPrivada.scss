@@ -1,0 +1,168 @@
+/*
+.bo {
+    background: rgb(99, 39, 120)
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8
+}
+
+.profile-button {
+    background: rgb(99, 39, 120);
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #682773
+}
+
+.profile-button:focus {
+    background: #682773;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #682773;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #682773;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+.add-experience:hover {
+    background: #BA68C8;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #BA68C8
+}
+
+*/
+
+/* ZONA PRIVADA 
+
+.container-perfil{
+    margin: 0;
+}
+
+.perfil{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 3;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: $myOrange2P;
+}
+
+.centrarboton{
+    align-items: center;
+}
+
+.botoncito{
+    background: $myOrange2P;
+    box-shadow: none;
+    border: none;
+}
+
+.listaz{
+    display: flex;
+    flex-direction: row;
+    
+}
+*/
+
+// body e input
+.bodyzp{
+    font-family: $headings-font-family;
+}
+
+.form-control{
+    font-size: 14px
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: $myOrange2P
+}
+
+// perfil de foto
+
+.perfil-foto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3px; // p-3
+    padding-top: 5px; // py-5
+}
+
+.foto-redondita{
+    width: 150px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 40px;
+}
+
+.span-font-per{
+    font-weight: bold;
+}
+
+
+// perfil central
+
+.perfil-central{
+    padding: 3px; // p-3
+    padding-top: 50px; // py-5
+}
+
+.titulo-perfil{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.margin-col{
+    margin-top: 40px
+}
+
+
+
+
+
+// Botón
+.btnzp{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+
+// lista
+.listazp{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.azp{
+    color: #ebd456;
+    text-decoration: none;
+}
+
+.azp:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    color: #f5d51f;
+}
+
+

@@ -1,0 +1,24 @@
+// 
+// Colors
+// 
+
+//- Override and add to color system
+$myblueP : #1a3144;
+$myblueP2 : #1e384d;
+$myblueP3 : #84C7FF;
+$myblueButtons: #5FA8E4;
+$myblueText:#125893;
+$myorangeP : #d1ae66;
+$myOrange2P : #a3764c;
+$myOrange3P : #c4997f;
+$myOrange4P : #FFD89E;
+
+
+//- Override primary color
+$primary: $myblueP;
+$secondary: $myorangeP;
+
+// $danger: yellow;
+// The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
+// See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
+$min-contrast-ratio: 2.4;

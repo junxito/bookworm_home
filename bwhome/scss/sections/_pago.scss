@@ -1,0 +1,98 @@
+//
+// Header
+//
+.pago {
+  * {
+    font-weight: 300;
+    font-family: $headings-font-family;
+  }
+
+  .container {
+    height: 100vh;
+  }
+
+  .card {
+    background-color: #b9dfff;
+    border: none;
+    border-radius: 10px;
+  }
+
+  .card-header {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+
+  .metodo.pago{
+    margin-left: 20px;
+  }
+
+  .iconos.credito{
+    margin-bottom: 0%;
+    text-align: center;
+  }
+
+  .btn-light:focus {
+    color: #212529;
+    background-color: #e2e6ea;
+    border-color: #dae0e5;
+    box-shadow: 0 0 0 0.2rem rgba(216, 217, 219, 0.5);
+  }
+
+  .form-control {
+    height: 50px;
+    border: 2px solid #eee;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  .form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #039be5;
+    outline: 0;
+    box-shadow: none;
+  }
+
+  .input {
+    position: relative;
+  }
+
+  .input i {
+    position: absolute;
+    top: 16px;
+    left: 11px;
+    color: #989898;
+  }
+
+  .input input {
+    text-indent: 25px;
+  }
+
+  .card-text {
+    font-size: 13px;
+    margin-left: 6px;
+  }
+
+  .transaccion {
+    font-size: 12px;
+  }
+
+  .precio {
+    top: 0px;
+    font-size: 22px;
+  }
+
+  .iva {
+    font-size: 11px;
+  }
+
+  .line {
+    color: #bfbdbd;
+  }
+
+  .payment-card-body {
+    flex: 1 1 auto;
+    padding: 24px 1rem !important;
+  }
+}

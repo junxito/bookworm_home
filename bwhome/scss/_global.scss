@@ -1,0 +1,65 @@
+// 
+// Global
+// 
+
+// Scroll padding for all scroll targets on page used with
+// native CSS smooth scrolling
+// 
+// https://caniuse.com/?search=scroll-padding
+
+html {
+    height: 100%;
+    scroll-padding-top: calc(#{$navbar-height} - 1px);
+    
+}
+
+
+.sr-only{
+    display: none;
+}
+
+// Styling for page sections
+.page-section {
+    padding: 6rem 0;
+
+    .page-section-heading {
+        font-size: 2.25rem;
+        line-height: 2rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+        .page-section-heading {
+            font-size: 3rem;
+            line-height: 2.5rem;
+        }
+    }
+}
+
+.link-primary{
+    color: $myblueText !important;
+}
+
+.tituloindex{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    position: relative;
+    color: white;
+  }
+  
+  body::before {
+    content: "";
+    background-image: url('../assets/img/content/png-transparent-books-background-books-retro-library.png');
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(5px);
+    z-index: -1;
+  }

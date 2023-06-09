@@ -1,0 +1,36 @@
+// 
+// Styles
+// 
+
+// Import custom variables and override default Bootstrap variables
+@import "./variables.scss";
+
+// Import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Import custom styles
+@import "./global.scss";
+
+// Components
+@import "./components/divider.scss";
+@import "./components/buttons.scss";
+@import "./components/navbar.scss";
+@import "./components/forms.scss";
+@import "./components/carousel.scss";
+@import "./components/formulario.scss";
+@import "./components/breadcrumb.scss";
+@import "./components/cookie.scss";
+@import "./components/modal";
+
+// Sections
+@import "./sections/masthead.scss";
+@import "./sections/portfolio.scss";
+@import "./sections/footer.scss";
+@import "./sections/header.scss";
+@import "./sections/ofertas.scss";
+@import "./sections/zonaPrivada.scss";
+@import "./sections/carrito.scss";
+@import "./sections/figuras.scss";
+@import "./sections/pago.scss";
+@import "./sections/visProducto.scss";
+@import "./sections/terminos.scss";

@@ -1,0 +1,30 @@
+i.fa-solid.fa-house-chimney::before{
+    width: 60px !important;
+}
+
+.col-md-8.title-figures {
+    text-align: center;
+    margin-top: 30px;
+}
+
+//No funciona
+.h1-title-figures {
+    font-family: $headings-font-family;
+}
+
+.tipos-figures{
+    list-style:none;
+}
+
+.col-3.categorias-figures{
+    text-align: center;
+}
+
+.card-img.figures{
+    text-align: center;
+}
+
+.card-img-bottom.figures{
+    text-align: center;
+    font-family: $font-family-acme;
+}
