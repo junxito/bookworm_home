@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-06-2023 a las 15:42:13
+-- Tiempo de generación: 15-06-2023 a las 16:39:21
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -175,13 +175,16 @@ ALTER TABLE `autor`
 -- Indices de la tabla `compra`
 --
 ALTER TABLE `compra`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_compra_usuario` (`idUsuario`),
+  ADD KEY `fk_compra_libro` (`idLibro`);
 
 --
 -- Indices de la tabla `libro`
 --
 ALTER TABLE `libro`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_libro_autor` (`idAutor`);
 
 --
 -- Indices de la tabla `usuario`
@@ -193,7 +196,9 @@ ALTER TABLE `usuario`
 -- Indices de la tabla `valoracion`
 --
 ALTER TABLE `valoracion`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_valoracion_usuario` (`idUsuario`),
+  ADD KEY `fk_valoracion_libro` (`idLibro`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -228,6 +233,30 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `valoracion`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `compra`
+--
+ALTER TABLE `compra`
+  ADD CONSTRAINT `fk_compra_libro` FOREIGN KEY (`idLibro`) REFERENCES `libro` (`id`),
+  ADD CONSTRAINT `fk_compra_usuario` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`id`);
+
+--
+-- Filtros para la tabla `libro`
+--
+ALTER TABLE `libro`
+  ADD CONSTRAINT `fk_libro_autor` FOREIGN KEY (`idAutor`) REFERENCES `autor` (`id`);
+
+--
+-- Filtros para la tabla `valoracion`
+--
+ALTER TABLE `valoracion`
+  ADD CONSTRAINT `fk_valoracion_libro` FOREIGN KEY (`idLibro`) REFERENCES `libro` (`id`),
+  ADD CONSTRAINT `fk_valoracion_usuario` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
