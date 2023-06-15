@@ -88,21 +88,21 @@ if (isset($_POST['register-submit'])) {
                                     </div>
                                     <div class="form-group">
                                         <label for="lastname1">Apellido 1</label>
-                                        <input type="text" name="lastname1" id="lastname1" class="form-control" placeholder="Apellido 1" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ.]+$" required
+                                        <input type="text" name="lastname1" id="lastname1" class="form-control" placeholder="Apellido 1" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ.\s]+$" required
                                         value="<?php if (isset($_POST['lastname1'])) {
                                             echo $_POST['lastname1'];
                                         }?>">
                                     </div>
                                     <div class="form-group">
                                         <label for="lastname2">Apellido 2</label>
-                                        <input type="text" name="lastname2" id="lastname2" class="form-control" placeholder="Apellido 2" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ.]+$" required 
+                                        <input type="text" name="lastname2" id="lastname2" class="form-control" placeholder="Apellido 2" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ.\s]+$" required 
                                         value="<?php if (isset($_POST['lastname2'])) {
                                             echo $_POST['lastname2'];
                                         }?>">
                                     </div>
                                     <div class="form-group">
                                         <label for="pais">País</label>
-                                        <input type="text" name="pais" id="pais"  class="form-control" placeholder="País" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ.]+$" required
+                                        <input type="text" name="pais" id="pais"  class="form-control" placeholder="País" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ.\s]+$" required
                                         value="<?php if (isset($_POST['pais'])) {
                                             echo $_POST['pais'];
                                         }?>">

@@ -176,5 +176,16 @@ class LibroController{
             echo $exc->getMessage();
         }
     }
+    public static function deleteLibroFromIdAutor($idLibroDeleted){
+        try{
+            $conex= new Conexion();
+            $result=$conex->exec("DELETE FROM libro WHERE idAutor=$idLibroDeleted");
+
+            unset($conex);
+            return $result;
+        }catch (PDOException $exc){
+            echo $exc->getMessage();
+        }
+    }
 }
 ?>

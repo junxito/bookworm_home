@@ -1,5 +1,6 @@
 <?php include("includes/a_config.php");
 $libro = LibroController::fetchLibroFromId($_GET['idLibro']);
+$autor = AutorController::fetchAutorFromId($libro->idAutor);
 if (!isset($_SESSION['usuario'])) {
     header("Location:inicioSesion.php");
 }
@@ -71,6 +72,7 @@ if (isset($_POST['botonComentario'])) {
                         <h4><?php echo $libro->precio; ?>€ &nbsp;&nbsp;&nbsp;&nbsp;Edición: <?php echo $libro->edicion; ?></h4>
                         <h5>Editorial: <?php echo $libro->editorial; ?></h5>
                         <p style="font-size: medium;">Publicado en: <?php echo $libro->fechapost; ?></p>
+                        <p style="font-size: medium;">Autor: <a href="visAutor.php?idAutor=<?php echo $autor->id; ?>"><?php echo $autor->nombrefull; ?></a></p>
                         <span><a href="#Resenia" class="btnC">Reseñas</a><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></span>
                         <div class="mt-2 pr-3 letra">
                             <p style="font-size: medium;"><?php echo $libro->descripcion; ?></p>

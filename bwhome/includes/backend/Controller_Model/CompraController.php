@@ -66,6 +66,28 @@ class CompraController{
             echo $exc->getMessage();
         }
     }
+    public static function deleteComprafromIdLibro($idCompraDeleted){
+        try{
+            $conex= new Conexion();
+            $result=$conex->exec("DELETE FROM compra WHERE idLibro=$idCompraDeleted");
+
+            unset($conex);
+            return $result;
+        }catch (PDOException $exc){
+            echo $exc->getMessage();
+        }
+    }
+    public static function deleteComprafromIdUsuario($idCompraDeleted){
+        try{
+            $conex= new Conexion();
+            $result=$conex->exec("DELETE FROM compra WHERE idUsuario=$idCompraDeleted");
+
+            unset($conex);
+            return $result;
+        }catch (PDOException $exc){
+            echo $exc->getMessage();
+        }
+    }
     public static function fetchCompraFromIdUsuario($idUsuario){
         try{
             $conex= new Conexion();

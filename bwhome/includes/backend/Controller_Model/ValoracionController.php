@@ -81,5 +81,27 @@ class ValoracionController{
             echo $exc->getMessage();
         }
     }
+    public static function deleteValoracionFromIdLibro($idValoracionDeleted){
+        try{
+            $conex= new Conexion();
+            $result=$conex->exec("DELETE FROM valoracion WHERE idLibro=$idValoracionDeleted");
+
+            unset($conex);
+            return $result;
+        }catch (PDOException $exc){
+            echo $exc->getMessage();
+        }
+    }
+    public static function deleteValoracionFromIdUsuario($idValoracionDeleted){
+        try{
+            $conex= new Conexion();
+            $result=$conex->exec("DELETE FROM valoracion WHERE idUsuario=$idValoracionDeleted");
+
+            unset($conex);
+            return $result;
+        }catch (PDOException $exc){
+            echo $exc->getMessage();
+        }
+    }
 }
 ?>

@@ -29,11 +29,15 @@ if (isset($_POST['editarAutor'])) {
 
 if (isset($_POST['eliminarUsuario'])) {
     $usuarioEliminar = UsuarioController::deleteUsuario($_POST['idUsuario']);
+    $valoracionEliminar= ValoracionController::deleteValoracionFromIdUsuario($_POST['idUsuario']);
+    $compraEliminar= CompraController::deleteComprafromIdUsuario($_POST['idUsuario']);
     $msg= "Usuario eliminado correctamente!";
     header('Location:crudAdministrador.php?msg='.$msg);
 }
 if (isset($_POST['eliminarLibro'])) {
     $libroEliminar = LibroController::deleteLibro($_POST['idLibro']);
+    $valoracionEliminar= ValoracionController::deleteValoracionFromIdLibro($_POST['idLibro']);
+    $compraEliminar= CompraController::deleteComprafromIdLibro($_POST['idLibro']);
     $msg= "Libro eliminado correctamente!";
     header('Location:crudAdministrador.php?msg='.$msg);
 }
@@ -44,6 +48,12 @@ if (isset($_POST['eliminarValoracion'])) {
 }
 if (isset($_POST['eliminarAutor'])) {
     $autorEliminar = AutorController::deleteAutor($_POST['idAutor']);
+    $librosEliminados = LibroController::fetchLibroFromIdAutor($_POST['idAutor']);
+    $libroEliminar = LibroController::deleteLibroFromIdAutor($_POST['idAutor']);
+    foreach ($librosEliminados as $l) {
+        $valoracionEliminar= ValoracionController::deleteValoracionFromIdLibro($l->id);
+        $compraEliminar= CompraController::deleteComprafromIdLibro($l->id);
+    }
     $msg= "Autor eliminado correctamente!";
     header('Location:crudAdministrador.php?msg='.$msg);
 }
@@ -108,12 +118,20 @@ if (isset($_POST['eliminarAutor'])) {
             <?php
             if (isset($_POST['usu-submit'])) {
             ?>
-                <div class="row my-5">
+                <div class="row ">
+                    <div class="row justify-content-center mb-3">
+                        <div class="col-md-5">
+                            <form action="anadirUsuarios.php" method="POST">
+                                    <input type="submit" class="btn-anadir text-light" name="anadirUsuario" value="AÑADIR USUARIO">
+                                </form>
+                        </div>
+                    </div>
                     <div class="col-md-2">
 
                     </div>
 
                     <div class="col-md-7">
+                        
                         <div class="table-responsive-sm">
                             <table class="table table-hover">
                                 <thead class="table-dark">
@@ -121,6 +139,9 @@ if (isset($_POST['eliminarAutor'])) {
                                         <th>Email</th>
                                         <th>Nombre</th>
                                         <th>Apellidos</th>
+                                        <th>País</th>
+                                        <th>CP</th>
+                                        <th>Teléfono</th>
                                         <th>Rol</th>
                                         <th>Saldo</th>
                                         <th>Operaciones</th>
@@ -137,6 +158,9 @@ if (isset($_POST['eliminarAutor'])) {
                                                 <td><?php echo $u->email; ?></td>
                                                 <td><?php echo $u->nombre; ?></td>
                                                 <td><?php echo $u->apellido1 . " " . $u->apellido2; ?></td>
+                                                <td><?php echo $u->pais; ?></td>
+                                                <td><?php echo $u->cp; ?></td>
+                                                <td><?php echo $u->tlf; ?></td>
                                                 <td><?php echo $u->rol; ?></td>
                                                 <td><?php echo $u->saldo; ?></td>
                                                 <td>
@@ -166,10 +190,7 @@ if (isset($_POST['eliminarAutor'])) {
                                 </tbody>
                             </table>
                         </div>
-                        <!-- Boton Añadir Usuario -->
-                        <form action="anadirUsuarios.php" method="POST">
-                            <input type="submit" class="btn-anadir text-light" name="anadirUsuario" value="AÑADIR USUARIO">
-                        </form>
+                        
                     </div>
 
                 <?php
@@ -179,6 +200,14 @@ if (isset($_POST['eliminarAutor'])) {
             if (isset($_POST['libro-submit'])) {
                 ?>
                     <div class="row ">
+                        <div class="row justify-content-center">
+                            <div class="col-md-5">
+                                <form action="anadirLibro.php" method="POST">
+                                    <input type="submit" class="btn-anadir text-light" name="anadirLibro" value="AÑADIR LIBRO">
+                                </form>
+                                <br>
+                            </div>
+                        </div>
                         <div class="col-md-1">
 
                         </div>
@@ -238,16 +267,7 @@ if (isset($_POST['eliminarAutor'])) {
                                     </tbody>
                                 </table>
                             </div>                            
-                        </div>
-                        <!-- Boton Añadir Libro -->
-                        <div class="row justify-content-center">
-                            <div class="col-md-5">
-                                <form action="anadirLibro.php" method="POST">
-                                    <input type="submit" class="btn-anadir text-light" name="anadirLibro" value="AÑADIR LIBRO">
-                                </form>
-                                <br>
-                            </div>
-                        </div>
+                        </div>                       
                         
                     </div>
                     <?php
@@ -315,12 +335,19 @@ if (isset($_POST['eliminarAutor'])) {
                     
             if (isset($_POST['autor-submit'])) {
                 ?>
-                    <div class="row my-5">
+                    <div class="row">
+                        <div class="row justify-content-center mb-3">
+                            <div class="col-md-5">
+                                <form action="anadirAutor.php" method="POST">
+                                    <input type="submit" class="btn-anadir text-light" name="anadirAutor" value="AÑADIR AUTOR">
+                                </form>
+                            </div>
+                        </div>
                         <div class="col-md-3">
 
                         </div>
 
-                        <div class="col-md-5">
+                        <div class="col-md-6">
                             <div class="table-responsive-sm">
                                 <table class="table table-hover">
                                     <thead class="table-dark">
@@ -345,6 +372,7 @@ if (isset($_POST['eliminarAutor'])) {
                                                             <input type="hidden" name="idAutor" value="<?php echo $a->id; ?>">
                                                             <input type="submit" name="editarAutor" value="Editar" class="btn btn-success">
                                                             <input type="submit" name="eliminarAutor" value="Eliminar" class="btn btn-danger">
+                                                            
                                                         </form>
                                                     </td>
                                                 </tr>
@@ -357,10 +385,6 @@ if (isset($_POST['eliminarAutor'])) {
                                     </tbody>
                                 </table>
                             </div>
-                            <!-- Boton Añadir Autor -->
-                            <form action="anadirAutor.php" method="POST">
-                                <input type="submit" class="btn-anadir text-light" name="anadirAutor" value="AÑADIR AUTOR">
-                            </form>
                         </div>
                     </div>
                     <?php

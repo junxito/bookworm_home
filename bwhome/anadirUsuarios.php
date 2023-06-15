@@ -49,35 +49,35 @@ if (isset($_POST['anadir-submit'])) {
                                     <form id="register-form" action="" method="post" role="form" style="display: block;">
                                         <div class="form-group">
                                             <p>Correo electronico</p>
-                                            <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="@example.com" required>
+                                            <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="@example.com" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required>
                                         </div>
                                         <div class="form-group">
                                             <p>Contraseña</p>
-                                            <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Al menos 6 caracteres" required pattern="^[A-Za-z\d.]+$">
+                                            <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Al menos 6 caracteres" required pattern="^[A-Za-z\d.]{6, }$">
                                         </div>
                                         <div class="form-group">
                                             <p>Nombre</p>
-                                            <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Nombre de usuario" required>
+                                            <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Nombre de usuario" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ.\s]+$" required>
                                         </div>
                                         <div class="form-group">
                                             <p>Apellido 1</p>
-                                            <input type="text" name="lastname1" id="lastname1" tabindex="1" class="form-control" placeholder="Apellido 1" required>
+                                            <input type="text" name="lastname1" id="lastname1" tabindex="1" class="form-control" placeholder="Apellido 1" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ.\s]+$" required>
                                         </div>
                                         <div class="form-group">
                                             <p>Apellido 2</p>
-                                            <input type="text" name="lastname2" id="lastname2" tabindex="1" class="form-control" placeholder="Apellido 2" required>
+                                            <input type="text" name="lastname2" id="lastname2" tabindex="1" class="form-control" placeholder="Apellido 2" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ.\s]+$" required>
                                         </div>
                                         <div class="form-group">
                                             <p>País</p>
-                                            <input type="text" name="pais" id="pais" tabindex="1" class="form-control" placeholder="País" required>
+                                            <input type="text" name="pais" id="pais" tabindex="1" class="form-control" placeholder="País" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ.\s]+$" required>
                                         </div>
                                         <div class="form-group">
                                             <p>Código Postal</p>
-                                            <input type="text" name="postalcode" id="postalcode" tabindex="1" class="form-control" placeholder="Código Postal del país" required>
+                                            <input type="text" name="postalcode" id="postalcode" tabindex="1" class="form-control" placeholder="Código Postal del país" pattern="^\d{5}$" required>
                                         </div>
                                         <div class="form-group">
                                             <p>Teléfono</p>
-                                            <input type="text" name="phone" id="phone" tabindex="1" class="form-control" placeholder="Teléfono de contacto" required>
+                                            <input type="text" name="phone" id="phone" tabindex="1" class="form-control" placeholder="Teléfono de contacto" pattern="^\d{9}$" required>
                                         </div>
                                         <div class="form-group">
                                             <p>Saldo</p>

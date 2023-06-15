@@ -52,35 +52,35 @@ if (isset($_POST['edit-submit'])) {
                                 <form id="register-form" action="" method="POST" role="form" style="display: block;">
                                     <div class="form-group">
                                         <label for="email">Correo electronico</label>
-                                        <input type="email" name="email" id="email" class="form-control" value=<?php echo $_SESSION['usuarioEdit']->email ?> required>
+                                        <input type="email" name="email" id="email" class="form-control" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value=<?php echo $_SESSION['usuarioEdit']->email ?> required>
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Contraseña</label>
-                                        <input type="password" name="password" id="password" class="form-control" value=<?php echo $_SESSION['usuarioEdit']->password ?> required pattern="^[A-Za-z\d.]+$">
+                                        <input type="password" name="password" id="password" class="form-control" value=<?php echo $_SESSION['usuarioEdit']->password ?> required pattern="^[A-Za-z\d.]{6, }$">
                                     </div>
                                     <div class="form-group">
                                         <label for="username">Nombre</label>
-                                        <input type="text" name="username" id="username" class="form-control" value=<?php echo $_SESSION['usuarioEdit']->nombre ?> required>
+                                        <input type="text" name="username" id="username" class="form-control" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ.\s]+$" value=<?php echo $_SESSION['usuarioEdit']->nombre ?> required>
                                     </div>
                                     <div class="form-group">
                                         <label for="lastname1">Apellido 1</label>
-                                        <input type="text" name="lastname1" id="lastname1" class="form-control" value=<?php echo $_SESSION['usuarioEdit']->apellido1 ?> required>
+                                        <input type="text" name="lastname1" id="lastname1" class="form-control" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ.\s]+$" value=<?php echo $_SESSION['usuarioEdit']->apellido1 ?> required>
                                     </div>
                                     <div class="form-group">
                                         <label for="lastname2">Apellido 2</label>
-                                        <input type="text" name="lastname2" id="lastname2" class="form-control" value=<?php echo $_SESSION['usuarioEdit']->apellido2 ?> required>
+                                        <input type="text" name="lastname2" id="lastname2" class="form-control" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ.\s]+$" value=<?php echo $_SESSION['usuarioEdit']->apellido2 ?> required>
                                     </div>
                                     <div class="form-group">
                                         <label for="pais">País</label>
-                                        <input type="text" name="pais" id="pais" class="form-control" value=<?php echo $_SESSION['usuarioEdit']->pais ?> required>
+                                        <input type="text" name="pais" id="pais" class="form-control" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ.\s]+$" value=<?php echo $_SESSION['usuarioEdit']->pais ?> required>
                                     </div>
                                     <div class="form-group">
                                         <label for="postalcode">Código Postal</label>
-                                        <input type="text" name="postalcode" id="postalcode" class="form-control" value=<?php echo $_SESSION['usuarioEdit']->cp ?> required>
+                                        <input type="text" name="postalcode" id="postalcode" class="form-control" pattern="^\d{5}$" value=<?php echo $_SESSION['usuarioEdit']->cp ?> required>
                                     </div>
                                     <div class="form-group">
                                         <label for="phone">Teléfono</label>
-                                        <input type="text" name="phone" id="phone" class="form-control" value=<?php echo $_SESSION['usuarioEdit']->tlf ?> required>
+                                        <input type="text" name="phone" id="phone" class="form-control" pattern="^\d{9}$" value=<?php echo $_SESSION['usuarioEdit']->tlf ?> required>
                                     </div>
                                     <div class="form-group">
                                         <label for="rol">Rol</label>

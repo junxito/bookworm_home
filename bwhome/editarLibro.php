@@ -82,7 +82,7 @@ if (isset($_POST['cambio-submit'])) {
 
                                             <div class="col-md-4 form-group">
                                             <label for="isbn">ISBN</label>
-                                                <input type="text" name="isbn" tabindex="2" class="form-control" required value="<?php echo $_SESSION['libroEdit']->isbn ?>">
+                                                <input type="text" name="isbn" tabindex="2" class="form-control" required pattern="^\d{9}$" value="<?php echo $_SESSION['libroEdit']->isbn ?>">
                                             </div>
                                             
                                         </div>
@@ -139,12 +139,12 @@ if (isset($_POST['cambio-submit'])) {
                                         <div class="row">
                                         <div class="col-md-4 form-group">
                                                 <label for="precio">Precio</label>
-                                                <input type="text" name="precio" tabindex="2" class="form-control" required value="<?php echo $_SESSION['libroEdit']->precio ?>">
+                                                <input type="text" name="precio" tabindex="2" class="form-control" required pattern="^\d+(\.\d{2})?$" value="<?php echo $_SESSION['libroEdit']->precio ?>">
                                             </div>
 
                                             <div class="col-md-4 form-group">
                                                 <label for="stock">Stock</label>
-                                                <input type="text" name="stock" tabindex="2" class="form-control" required value="<?php echo $_SESSION['libroEdit']->stock ?>">
+                                                <input type="text" name="stock" tabindex="2" class="form-control" required pattern="^\d+$" value="<?php echo $_SESSION['libroEdit']->stock ?>">
                                             </div>
 
                                             

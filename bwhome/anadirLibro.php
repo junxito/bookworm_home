@@ -65,7 +65,7 @@ if (isset($_POST['anadir-submit'])) {
 
                                             <div class="col-md-4 form-group">
                                             <label for="isbn">ISBN</label>
-                                                <input type="text" name="isbn" tabindex="2" class="form-control" required>
+                                                <input type="text" name="isbn" tabindex="2" class="form-control" pattern="^\d{9}$" required>
                                             </div>
                                             
                                         </div>
@@ -73,7 +73,7 @@ if (isset($_POST['anadir-submit'])) {
                                             <div class="col-md-4 form-group">
                                                 <label for="genero">Género</label>
                                                 <select name="genero" id="genero" required>
-                                                    <option value="">Seleccione un género</option>
+                                                    <option>Seleccione un género</option>
                                                     <option value="romance">Romance</option>
                                                     <option value="fantasia">Fantasía</option>
                                                     <option value="cienciaficcion">Ciencia Ficción</option>
@@ -86,7 +86,7 @@ if (isset($_POST['anadir-submit'])) {
                                             <div class="col-md-4 form-group">
                                                 <label for="autor">Autor</label>
                                                 <select name="autor" id="autor" required>
-                                                    <option value="">Seleccione un género</option>
+                                                    <option>Seleccione un autor</option>
                                                     <?php
                                                         $autores = AutorController::fetchAll();
                                                         if ($autores) {
@@ -108,7 +108,7 @@ if (isset($_POST['anadir-submit'])) {
                                             <div class="col-md-4 form-group">
                                                 <label for="edicion">Edición</label>
                                                 <select name="edicion" id="edicion" required>
-                                                    <option value="">Seleccione una edición</option>
+                                                    <option>Seleccione una edición</option>
                                                     <option value="Tapa blanda">Tapa Blanda</option>
                                                     <option value="Tapa dura">Tapa Dura</option>
                                                     <option value="Cuero">Cuero</option>
@@ -119,12 +119,12 @@ if (isset($_POST['anadir-submit'])) {
                                         <div class="row">
                                         <div class="col-md-4 form-group">
                                                 <label for="precio">Precio</label>
-                                                <input type="text" name="precio" tabindex="2" class="form-control" required>
+                                                <input type="text" name="precio" tabindex="2" class="form-control" pattern="^\d+(\.\d{2})?$" required>
                                             </div>
 
                                             <div class="col-md-4 form-group">
                                                 <label for="stock">Stock</label>
-                                                <input type="text" name="stock" tabindex="2" class="form-control" required>
+                                                <input type="text" name="stock" tabindex="2" class="form-control" pattern="^\d+$" required>
                                             </div>
 
                                             

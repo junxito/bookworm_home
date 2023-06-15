@@ -59,8 +59,8 @@ if (isset($_POST['anadir-submit'])) {
 
                                         <div class="row">
                                             <div class="col-md-4 form-group">
-                                                <label for="nombrefull">Nombre Completo</label>
-                                                <input type="text" name="nombrefull" tabindex="2" class="form-control" placeholder="Nombre" required>
+                                                <label for="nombrefull">Nombre Completo:</label>
+                                                <input type="text" name="nombrefull" tabindex="2" class="form-control" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ.\s]+$" placeholder="Nombre" required>
                                             </div>
 
                                             

@@ -74,15 +74,15 @@ if (isset($_POST['cambio-submit'])) {
 
                                         <div class="row">
                                             <div class="col-md-4 form-group">
-                                                <label for="nombrefull">Nombre:</label>
-                                                <input type="text" name="nombrefull" id="nombrefull" class="form-control" value="<?php echo $_SESSION['autorEdit']->nombrefull ?>">
+                                                <label for="nombrefull">Nombre Completo:</label>
+                                                <input type="text" name="nombrefull" id="nombrefull" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ.\s]+$" class="form-control" value="<?php echo $_SESSION['autorEdit']->nombrefull ?>">
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="col-md-4 form-group">
                                                 <label for="biografia">Biografía del Autor:</label>
-                                                <textarea id="biografia" name="biografia" rows="4" cols="50"><?php echo $_SESSION['autorEdit']->biografia ?></textarea>
+                                                <textarea id="biografia" name="biografia" rows="4" cols="50" required><?php echo $_SESSION['autorEdit']->biografia ?></textarea>
                                             </div>
                                         </div>
 
