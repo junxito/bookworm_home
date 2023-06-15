@@ -62,7 +62,7 @@ if (isset($_POST['eliminarCompra'])) {
 
                 </div>
 
-                <div class="col-md-5">
+                <div class="col-md-8">
                     <div class="table-responsive-sm">
                         <table class="table table-hover">
                             <thead class="table-dark">
@@ -72,9 +72,7 @@ if (isset($_POST['eliminarCompra'])) {
                                     <th>Titulo</th>
                                     <th>Fecha del pedido</th>
                                     <th>Cantidad</th>
-                                    <th>Precio</th>
-                                    <th>Nombre Usuario</th>
-                                    <th>Email</th>
+                                    <th>Precio Total</th>
                                     <th>Operaciones</th>
                                 </tr>
                             </thead>
@@ -93,9 +91,7 @@ if (isset($_POST['eliminarCompra'])) {
                                             <td><?php echo $libro->titulo; ?></td>
                                             <td><?php echo $c->fechapedido; ?></td>
                                             <td><?php echo $c->cantidad; ?></td>
-                                            <td><?php echo $libro->precio; ?></td>
-                                            <td><?php echo $usuario->nombre; ?></td>
-                                            <td><?php echo $usuario->email; ?></td>
+                                            <td><?php echo $libro->precio * $c->cantidad; ?></td>
                                             <td>
                                                 <form action="detalleCompra.php" method="POST">
                                                     <input type="hidden" name="idLibro" value="<?php echo $c->idLibro; ?>">

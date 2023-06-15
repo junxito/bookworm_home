@@ -24,6 +24,29 @@ class LibroController{
         }
     }
 
+    public static function fetch5(){
+        try{
+            $conex=new Conexion();
+            $result=$conex->prepare("SELECT * FROM libro ORDER BY id DESC LIMIT 5");
+            $result->execute();
+            if($result->rowCount()){
+                $l=new self();
+                while($reg=$result->fetchObject()){
+                    $l=new Libro($reg->id, $reg->titulo, $reg->descripcion, $reg->fechapost, $reg->precio, $reg->idAutor, $reg->stock, $reg->editorial, $reg->isbn, $reg->edicion, $reg->portada, $reg->genero);
+                    $libros[]=$l;
+                }
+            }else {
+                $libros = false;
+            }
+            unset($conex);
+            return $libros;
+        } catch (PDOException $exc){
+            echo $exc->getMessage();
+        }
+    }
+
+    
+
     public static function fetchLibroFromId($idLibro){
         try{
             $conex= new Conexion();
@@ -67,8 +90,8 @@ class LibroController{
     public static function fetchLibroFromTitulo($titulo){
         try{
             $conex= new Conexion();
-            $result=$conex->prepare("SELECT * FROM libro WHERE titulo=:titulo");
-            $result->bindParam(":titulo", $titulo);
+            $result=$conex->prepare("SELECT * FROM libro WHERE titulo LIKE :titulo ");
+            $result->bindValue(":titulo", '%'.$titulo.'%');
             $result->execute();
             if($result->rowCount()){
                 $l=new self();

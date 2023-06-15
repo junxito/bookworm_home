@@ -6,6 +6,12 @@ if (isset($_POST['editarUsuario'])) {
         header('Location:editarUsuarios.php');
     }
 }
+if (isset($_POST['recargarUsuario'])) {
+    $recargarUsuario = UsuarioController::recargarSaldo($_POST['idUsuario']);
+    $msg= "Saldo de usuario recargado correctamente!";
+    header('Location:crudAdministrador.php?msg='.$msg);
+    
+}
 if (isset($_POST['editarLibro'])) {
     $libroEdit = LibroController::fetchLibroFromId($_POST['idLibro']);
     if ($libroEdit) {
@@ -103,11 +109,11 @@ if (isset($_POST['eliminarAutor'])) {
             if (isset($_POST['usu-submit'])) {
             ?>
                 <div class="row my-5">
-                    <div class="col-md-3">
+                    <div class="col-md-2">
 
                     </div>
 
-                    <div class="col-md-5">
+                    <div class="col-md-7">
                         <div class="table-responsive-sm">
                             <table class="table table-hover">
                                 <thead class="table-dark">
@@ -116,6 +122,7 @@ if (isset($_POST['eliminarAutor'])) {
                                         <th>Nombre</th>
                                         <th>Apellidos</th>
                                         <th>Rol</th>
+                                        <th>Saldo</th>
                                         <th>Operaciones</th>
                                     </tr>
                                 </thead>
@@ -131,10 +138,16 @@ if (isset($_POST['eliminarAutor'])) {
                                                 <td><?php echo $u->nombre; ?></td>
                                                 <td><?php echo $u->apellido1 . " " . $u->apellido2; ?></td>
                                                 <td><?php echo $u->rol; ?></td>
+                                                <td><?php echo $u->saldo; ?></td>
                                                 <td>
                                                     <form action="" method="POST">
                                                         <input type="hidden" name="email" value="<?php echo $u->email; ?>">
                                                         <input type="hidden" name="idUsuario" value="<?php echo $u->id; ?>">
+                                                        <input type="submit" name="recargarUsuario" value="Recargar saldo" class="btn btn-primary"<?php
+                                                                                                                                            if ($u->email == $_SESSION['usuario']->email) {
+                                                                                                                                                echo "hidden";
+                                                                                                                                            }
+                                                                                                                                            ?>>
                                                         <input type="submit" name="editarUsuario" value="Editar" class="btn btn-success">
                                                         <input type="submit" name="eliminarUsuario" value="Eliminar" class="btn btn-danger" <?php
                                                                                                                                             if ($u->email == $_SESSION['usuario']->email) {
@@ -166,11 +179,11 @@ if (isset($_POST['eliminarAutor'])) {
             if (isset($_POST['libro-submit'])) {
                 ?>
                     <div class="row ">
-                        <div class="col-md-2">
+                        <div class="col-md-1">
 
                         </div>
 
-                        <div class="col-md-5">
+                        <div class="col-md-9">
                             <div class="table-responsive-sm">
                                 <table class="table table-hover">
                                     <thead class="table-dark">
@@ -202,7 +215,7 @@ if (isset($_POST['eliminarAutor'])) {
                                                     <td><?php echo $l->isbn; ?></td>
                                                     <td><?php echo $l->titulo; ?></td>
                                                     <td><?php echo $l->genero; ?></td>
-                                                    <td><?php echo $autor->id; ?></td>
+                                                    <td><?php echo $autor->nombrefull; ?></td>
                                                     <td><?php echo $l->editorial; ?></td>
                                                     <td><?php echo $l->edicion; ?></td>
                                                     <td><?php echo $l->fechapost; ?></td>

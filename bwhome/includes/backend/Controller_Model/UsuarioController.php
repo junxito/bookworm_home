@@ -117,6 +117,17 @@ class UsuarioController{
             echo $exc->getMessage();
         }
     }
+    public static function recargarSaldo($idUsuario){
+        try{
+            $conex= new Conexion();
+            $result=$conex->exec("UPDATE usuario SET saldo = 100 WHERE id=$idUsuario");
+
+            unset($conex);
+            return $result;
+        }catch (PDOException $exc){
+            echo $exc->getMessage();
+        }
+    }
 
     public static function deleteUsuario($idUsuarioDeleted){
         try{

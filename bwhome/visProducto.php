@@ -193,7 +193,7 @@ if (isset($_POST['botonComentario'])) {
                     </div>
                 </form>
                 <?php
-                $valoraciones = ValoracionController::fetchAll();
+                $valoraciones = ValoracionController::fetchValoracionFromIdLibro($libro->id);
                 if ($valoraciones) {
                     foreach ($valoraciones as $v) {
                         $usuarioComentario = UsuarioController::fetchUsuariofromId($v->idUsuario);
@@ -218,20 +218,20 @@ if (isset($_POST['botonComentario'])) {
                                     <div class="row">
                                         <div class="col">
                                             <div class="valoracion">
-                                                <p class="clasificacion">
-                                                    <input  type="radio" name="estrellas2" <?php if($v->rating==5) echo "checked"?> value="5" disabled>
+                                                <p class="clasificacion2">
+                                                    <input  type="radio" name="estrellas2-<?php echo $v->id;?>" <?php if($v->rating==5) echo "checked"?> value="5" disabled>
                                                     <label for="radio1"><i class="fa-solid fa-star"></i></label>
 
-                                                    <input  type="radio" name="estrellas2" <?php if($v->rating==4) echo "checked"?> value="4" disabled>
+                                                    <input  type="radio" name="estrellas2-<?php echo $v->id;?>" <?php if($v->rating==4) echo "checked"?> value="4" disabled>
                                                     <label for="radio2"><i class="fa-solid fa-star"></i></label>
 
-                                                    <input  type="radio" name="estrellas2" <?php if($v->rating==3) echo "checked"?> value="3" disabled>
+                                                    <input  type="radio" name="estrellas2-<?php echo $v->id;?>" <?php if($v->rating==3) echo "checked"?> value="3" disabled>
                                                     <label for="radio3"><i class="fa-solid fa-star"></i></label>
 
-                                                    <input  type="radio" name="estrellas2" <?php if($v->rating==2) echo "checked"?> value="2" disabled>
+                                                    <input  type="radio" name="estrellas2-<?php echo $v->id;?>" <?php if($v->rating==2) echo "checked"?> value="2" disabled>
                                                     <label for="radio4"><i class="fa-solid fa-star"></i></label>
 
-                                                    <input  type="radio" name="estrellas2" <?php if($v->rating==1) echo "checked"?> value="1" disabled>
+                                                    <input  type="radio" name="estrellas2-<?php echo $v->id;?>" <?php if($v->rating==1) echo "checked"?> value="1" disabled>
                                                     <label for="radio5"><i class="fa-solid fa-star"></i></label>
 
                                                 </p>

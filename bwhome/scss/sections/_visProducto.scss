@@ -14,7 +14,8 @@
     display: flex;
     justify-content: center;
     border-bottom: 1px solid #eee;
-    width: 75%;
+    width: 325px;
+    height: 500px;
     margin-top: 20px;
     margin-bottom: 20px;
     overflow: hidden;
@@ -104,3 +105,22 @@ p.clasificacion input:checked ~ label {
   color: orange;
 }
 
+
+p.clasificacion2 {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+p.clasificacion2 input {
+  position: absolute;
+  top: -100px;
+}
+
+p.clasificacion2 label {
+  float: right;
+  color: #333;
+}
+p.clasificacion2 input:checked ~ label {
+  color: orange;
+}

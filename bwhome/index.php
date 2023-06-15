@@ -46,62 +46,36 @@
 
     ?> 
         <section>
+            <h1 class="my-5 mx-5">Últimos libros</h1>
             <div class="container-img text-center my-3">
                 <div class="row mx-auto my-auto justify-content-center">
                     <!-- col -->
                     <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner pequenio" role="listbox">
-                            <div class="carousel-item pequenio active">
-                                <div class="col-md-3">
-                                    <div class="card">
-                                        <div class="card-img">
-                                            <img src="assets/img/content/img1.jpg" class="img-fluid" alt="FunkoPops">
-                                        </div>
-                                        <div class="card-img-bottom" tabindex="0">Funko Pops
+                            <?php 
+                            $libros = LibroController::fetch5();
+                            $activo=true;
+                            if ($libros) {
+                                foreach ($libros as $l) {
+                                    ?>
+                                        <div class="carousel-item pequenio <?php if ($activo) echo "active"; $activo=false;?> text-dark">
+                                        <div class="col-md-3">
+                                           <div class="card">
+                                                <div class="card-img">
+                                                    <a href="visProducto.php?idLibro=<?php echo $l->id ?>"><img src="assets/img/content/<?php echo $l->portada;?>" class="img-fluid" alt="<?php echo $l->titulo;?>"></a>
+                                                </div>
+                                                <a href="visProducto.php?idLibro=<?php echo $l->id ?>" class="card-img-bottom" tabindex="0"><?php echo $l->titulo.'&nbsp;&nbsp;&nbsp;&nbsp;'.$l->precio; ?></a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item pequenio">
-                                <div class="col-md-3">
-                                    <div class="card">
-                                        <div class="card-img">
-                                            <img src="assets/img/content/img2.jpg" class="img-fluid" alt="FigurasAnime">
-                                        </div>
-                                        <div class="card-img-bottom" tabindex="0">Figuras Anime</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item pequenio">
-                                <div class="col-md-3">
-                                    <div class="card">
-                                        <div class="card-img">
-                                            <img src="assets/img/content/img3.jpg" class="img-fluid" alt="FigurasSuperheroes">
-                                        </div>
-                                        <div class="card-img-bottom" tabindex="0">Figuras Superheroes</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item pequenio">
-                                <div class="col-md-3">
-                                    <div class="card">
-                                        <div class="card-img">
-                                            <img src="assets/img/content/img7.jpg" class="img-fluid" alt="FigurasVideojuegos">
-                                        </div>
-                                        <div class="card-img-bottom" tabindex="0">Figuras Videojuegos</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item pequenio">
-                                <div class="col-md-3">
-                                    <div class="card">
-                                        <div class="card-img">
-                                            <img src="assets/img/content/img9.jpg" class="img-fluid" alt="FigurasPeliculasSeries">
-                                        </div>
-                                        <div class="card-img-bottom" tabindex="0">Figuras Peliculas/Series</div>
-                                    </div>
-                                </div>
-                            </div>
+                                    
+                                    <?php
+                                }
+                            }
+                            ?>
+
+                            
+
                         </div>
                         <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Anterior</span>
                         </a>
@@ -121,10 +95,10 @@
                             <div class="col-md-3">
                                 <div class="card">
                                     <div class="card-img">
-                                        <img src="assets/img/content/<?php echo $a->foto; ?>" class="img-fluid" alt="<?php echo $a->nombrefull; ?>">
+                                        <a href="visAutor.php?idAutor=<?php echo $a->id; ?>"><img src="assets/img/content/<?php echo $a->foto; ?>" class="img-fluid" alt="<?php echo $a->nombrefull; ?>"></a>
                                     </div>
-                                    <div class="card-img-bottom text-dark" tabindex="0"><?php echo $a->nombrefull; ?>
-                                    </div>
+                                    <a class="card-img-bottom text-dark" tabindex="0" href="visAutor.php?idAutor=<?php echo $a->id; ?>"><?php echo $a->nombrefull; ?>
+                                    </a>
                                 </div>
                             </div>
                             <?php

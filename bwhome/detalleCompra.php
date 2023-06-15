@@ -17,19 +17,21 @@ $libro = LibroController::fetchLibroFromId($_POST['idLibro']);
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-4">
+                <div class="col">
                     <nav aria-label="breadcrumb" class="breadcrumb-nav">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.php"><span class='sr-only'>Enlace a inicio</span><i class="fa-solid fa-house-chimney breadcrumb"></i></a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Detalle Compra</li>
+                            <li class="breadcrumb-item px-0 mx-0"><a class="px-0 mx-0"href="index.php"><span class='sr-only'>Enlace a inicio</span><i class="fa-solid fa-house-chimney breadcrumb"></i></a></li>
+                            <li class="breadcrumb-item active px-0 mx-0" aria-current="page">Detalle Compra</li>
                         </ol>
                     </nav>
                 </div>
-                <div class="col-md-8 carrito">
+            </div>
+
+            <div class="row">
+                <div class="col carrito">
                     <h1>Detalle Compra</h1>
                 </div>
             </div>
-
 
             <div class="row text-dark">
                 <!-- PRODUCTOS -->
@@ -37,15 +39,17 @@ $libro = LibroController::fetchLibroFromId($_POST['idLibro']);
                     <div class="card">
                         <div class="row">
 
-                            <div class="col-md-6 producto">
+                            <div class="col-md-6 producto mt-4">
                                 <img class="imagenCarr" src="./assets/img/content/<?php echo $libro->portada; ?>" alt="imagen de compra">
                             </div>
-                            <div class="col-md-6 producto justify-content-center">
+                            <div class="col-md-6 producto mt-4 justify-content-center">
 
-                                <div class="row">
-                                    <span><?php echo $libro->titulo; ?></span>
-                                    <span class="labelcarr"><?php echo $libro->precio; ?>€</span> <!-- Fase2: Falta propiedad "for"-->
-                                    <span class="labelcarr1"><?php echo $libro->descripcion; ?></span>
+                                <div class="row justify-content-center">
+                                    <div class="col-md-10 ">
+                                        <label class="h4"><?php echo $libro->titulo; ?></label>
+                                        <label class="labelcarr"><?php echo $libro->precio; ?>€</label> <!-- Fase2: Falta propiedad "for"-->
+                                        <label class="labelcarr1"><?php echo $libro->descripcion; ?></label>
+                                    </div>
                                 </div>
                                 <div class="row cantidad">
                                     <span class="labelcarr">Cantidad:</span>

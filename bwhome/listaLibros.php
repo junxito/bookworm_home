@@ -17,12 +17,26 @@
                     <nav aria-label="breadcrumb" class="breadcrumb-nav">
                         <ol id="breadcrumb-id" class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.php"><i class="fa-solid fa-house-chimney breadcrumb"></i><span class="sr-only">Home</span></a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Lista Productos</li>
+                            <li class="breadcrumb-item active" aria-current="page">Lista Libros</li>
                         </ol>
                     </nav>
                 </div>
                 <div class="col-md-8 title-offerts">
-                    <h1 class="h1-title-offerts">Listado Productos</h1>
+                    <h1 class="h1-title-offerts">Listado Libros <?php 
+                    if (isset($_GET['genero'])){
+                        if ($_GET['genero']=="romance") {
+                            echo "de Romance";
+                        } elseif ($_GET['genero']=="misterio") {
+                            echo "de Misterio";
+                        } elseif ($_GET['genero']=="cienciaficcion") {
+                            echo "de Ciencia ficción";
+                        } elseif ($_GET['genero']=="fantasia") {
+                            echo "de Fantasía";
+                        } else {
+                            echo "de Terror";
+                        }
+                    }
+                        ?></h1>
                 </div>
             </div>
             <!-- <div class="col-md-3">
@@ -42,7 +56,6 @@
                     <!-- Aqui empieza el foreach -->
                     <?php 
                     if (isset($_POST['barraBusqueda'])) {
-                        echo '<h1>Búsqueda por:  '.$_POST['barraBusqueda'].'</h1>';
                         $libros = LibroController::fetchLibroFromTitulo($_POST['barraBusqueda']);
                         if ($libros) {
                             $i=1;
@@ -55,7 +68,7 @@
                                 <div class="col-md-3">
                                     <div class="card offerts">
                                         <div class="card-img offerts">
-                                            <img src="./assets/img/content/<?php echo $l->portada; ?>" class="img-fluid offerts" alt="<?php echo $l->titulo; ?>" >
+                                        <a href="visProducto.php?idLibro=<?php echo $l->id; ?>"><img src="./assets/img/content/<?php echo $l->portada; ?>" class="img-fluid offerts" alt="<?php echo $l->titulo; ?>" ></a>
                                         </div>
                                         <div tabindex="0" class="card-img-bottom offerts">
                                             <a class="link-primary" href="visProducto.php?idLibro=<?php echo $l->id; ?>"><?php echo $l->titulo;?></a>
@@ -73,7 +86,6 @@
                             }                     
                         }
                     } elseif (isset($_GET['genero'])) {
-                        echo '<h1>Búsqueda por género:</h1></br>';
                         $libros = LibroController::fetchLibrosFromGenero($_GET['genero']);
                         if ($libros) {
                             $i=1;
@@ -86,7 +98,7 @@
                                 <div class="col-md-3">
                                     <div class="card offerts">
                                         <div class="card-img offerts">
-                                            <img src="./assets/img/content/<?php echo $l->portada; ?>" class="img-fluid offerts" alt="<?php echo $l->titulo; ?>" >
+                                        <a href="visProducto.php?idLibro=<?php echo $l->id; ?>"><img src="./assets/img/content/<?php echo $l->portada; ?>" class="img-fluid offerts" alt="<?php echo $l->titulo; ?>" ></a>
                                         </div>
                                         <div tabindex="0" class="card-img-bottom offerts">
                                             <a class="link-primary" href="visProducto.php?idLibro=<?php echo $l->id; ?>"><?php echo $l->titulo;?></a>
@@ -117,7 +129,7 @@
                                 <div class="col-md-3">
                                     <div class="card offerts">
                                         <div class="card-img offerts">
-                                            <img src="./assets/img/content/<?php echo $l->portada; ?>" class="img-fluid offerts" alt="<?php echo $l->titulo; ?>" >
+                                            <a href="visProducto.php?idLibro=<?php echo $l->id; ?>"><img src="./assets/img/content/<?php echo $l->portada; ?>" class="img-fluid offerts" alt="<?php echo $l->titulo; ?>" ></a>
                                         </div>
                                         <div tabindex="0" class="card-img-bottom offerts">
                                             <a class="link-primary" href="visProducto.php?idLibro=<?php echo $l->id; ?>"><?php echo $l->titulo;?></a>

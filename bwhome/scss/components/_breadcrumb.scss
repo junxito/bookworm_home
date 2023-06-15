@@ -7,19 +7,21 @@
 }
 .breadcrumb-nav{
     --bs-breadcrumb-divider: '>';
+    padding: 15px;
+    margin-top: 15px;
+    margin-left: 40px;
 }
 
 .breadcrumb-item > a{
     display: block;
     color: black;
     text-align: center;
-    padding: 14px 16px;
     font-weight: bold;
 }
 
 .fa-solid.fa-house-chimney.breadcrumb{
     color: white;
-    margin: 20px;
+    margin: 0;
 }
 
 // para eliminar un gutter que se estaba generando

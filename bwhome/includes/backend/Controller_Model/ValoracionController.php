@@ -24,6 +24,28 @@ class ValoracionController{
         }
     }
 
+    public static function fetchValoracionFromIdLibro($idLibro){
+        try{
+            $conex= new Conexion();
+            $result=$conex->prepare("SELECT * FROM valoracion WHERE idLibro=:idLibro");
+            $result->bindParam(":idLibro", $idLibro);
+            $result->execute();
+            if($result->rowCount()){
+                $v=new self();
+                while($reg=$result->fetchObject()){
+                    $v=new Valoracion($reg->id, $reg->rating, $reg->comentario, $reg->idLibro, $reg->idUsuario);
+                    $valoraciones[]=$v;
+                }
+            }else {
+                $valoraciones = false;
+            }
+            unset($conex);
+            return $valoraciones;
+        } catch (PDOException $exc){
+            echo $exc->getMessage();
+        }
+    }
+
     public static function newValoracion($valoracionNew){
         try{
             $conex= new Conexion();

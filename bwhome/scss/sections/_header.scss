@@ -1,6 +1,5 @@
 // 
 // Header
-// 
 
 
 
@@ -59,8 +58,7 @@
     background-color: $myOrange2P;
 }
 
-/*
-
-
-
-*/
+//boton lupa
+button.btn.btn-outline-secondary.bg-white.border-start-0.border.rounded-pill.ms-n3 {
+    margin-left: 10px;
+}

@@ -85,24 +85,6 @@ if (isset($_POST['login-button'])) {
                                     <input type="submit" name="login-button" id="login-button" class="form-control btn btn-mediano" value="Iniciar sesión">
                                 </div>
                             </form>
-                            <?php
-                            if ($login_button == '') {
-                                echo '<img src="' . $_SESSION["user_image"] . '" referrerpolicy="no-referrer" alt="Inicio de sesión con Google" class="image-circle" />';
-                            } else {
-                                echo '<div align="center">' . $login_button . '</div>';
-                            }
-                            ?>
-                            <?php
-                            if ($login_button == '') {
-                                echo '<li>' . $_SESSION['user_first_name'] . ' ' . $_SESSION['user_last_name'] . '</li>';
-                                echo '<li>' . '<a href="logout.php">Logout</a>' . '</li>';
-                            }
-                            ?><br>
-                            <div class="row">
-                                <div class="text-center">
-                                    <a href="" class="forgot-password">¿Olvidó su contraseña?</a>
-                                </div>
-                            </div>
                             <br>
                         </div>
                     </div>
