@@ -83,11 +83,11 @@ if (isset($_POST['botonComentario'])) {
                             ?>
                             <form action="" method="POST">
                                 <div>
-                                    <label class="labelcarr" for="cantidad">Cantidad:</label> <!-- Fase2: falta la propiedad for="valor"-->
+                                    <label class="labelcarr" for="cantidad">Cantidad:</label> 
                                     <input type="number" name="cantidad" id="cantidad" value="1">
                                 </div>
                                 <div class="mt-3">
-                                    <button class="btn btn-sm botonsito b1 mt-3">Añadir a la cesta</button>
+                                    <!-- <button class="btn btn-sm botonsito b1 mt-3">Añadir a la cesta</button> -->
                                     <input type="submit" name="comprarAhora" class="btn btn-sm btn-block botonsito b2 mt-3" value="Comprar ahora"></input>
                                 </div>
                             </form>
